@@ -38,7 +38,11 @@
         </ul>
       </section>
     {{end}}
-
+    {{ if  .Site.Params.versions }}
+    <li class="nav-item dropdown d-none d-lg-block">
+      {{ partial "navbar-version-selector.html" . }}
+    </li>
+    {{ end }}
     {{ if or .Site.IsMultiLingual $showvisitedlinks }}
     <section id="prefooter">
       <hr/>
